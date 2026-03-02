@@ -6,6 +6,7 @@ import ServicesCarousel from "@/components/sections/ServicesCarousel";
 import FeaturedProjectsParallax from "@/components/sections/FeaturedProjectsParallax";
 import LeadershipSection from "@/components/sections/LeadershipSection";
 import { CoreValuesSection } from "@/components/sections/CoreValuesSection";
+import GSAPHeroSection from "@/components/sections/GSAPHeroSection";
 import { FlowButton } from "@/components/ui/flow-button";
 
 export default function Home() {
@@ -13,35 +14,8 @@ export default function Home() {
     <main className="flex flex-col min-h-screen bg-[var(--background)]">
       <Header />
 
-      {/* Hero Section */}
-      <section className="flex w-full h-[700px] border-b border-[var(--border)]">
-        <div className="relative w-[560px] h-full">
-          <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1080"
-            alt="Modern corporate building"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="flex-1 flex flex-col justify-center gap-6 p-[80px] bg-[var(--background)]">
-          <div className="flex items-center gap-3">
-            <div className="w-1 h-5 bg-[var(--accent-lime)] rounded-sm" />
-            <span className="font-mono text-[13px] font-medium tracking-[2px] text-[var(--accent-blue)]">
-              TURN-KEY OFFICE SOLUTIONS
-            </span>
-          </div>
-          <h1 className="font-display text-[72px] leading-[1.05] text-[var(--foreground)] max-w-[720px]">
-            Enterprise Digital Infrastructure for Global Markets.
-          </h1>
-          <p className="font-body text-[17px] leading-[1.5] text-[var(--foreground-muted)] max-w-[700px]">
-            To become Africa&apos;s leading enterprise digital infrastructure provider serving global markets through innovation and excellence.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <FlowButton text="Explore Services" href="/sectors" />
-            <FlowButton text="Our Portfolio" href="/projects" />
-          </div>
-        </div>
-      </section>
+      {/* GSAP Cinematic Hero Section */}
+      <GSAPHeroSection />
 
       {/* Values Section */}
       <section className="flex items-center gap-[80px] h-[700px] p-[60px] border-b border-[var(--border)]">

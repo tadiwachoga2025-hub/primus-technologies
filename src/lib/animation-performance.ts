@@ -98,7 +98,8 @@ export class DeviceCapabilityDetector {
     }
 
     // 2. Check device memory (Chrome only)
-    const memory = (navigator as any).deviceMemory;
+    const nav = navigator as unknown as { deviceMemory?: number };
+    const memory = nav.deviceMemory;
     if (memory) {
       if (memory >= 8) score += 2;
       else if (memory >= 4) score += 1;
@@ -141,9 +142,10 @@ export class DeviceCapabilityDetector {
   isLowPowerMode(): boolean {
     // Check battery API for low power mode hints
     if ('getBattery' in navigator) {
-      return (navigator as any).getBattery().then((battery: any) => {
+      const nav = navigator as unknown as { getBattery: () => Promise<{ level: number }> };
+      return nav.getBattery().then((battery) => {
         return battery.level < 0.2; // Low battery = reduce quality
-      });
+      }) as unknown as boolean;
     }
     return false;
   }

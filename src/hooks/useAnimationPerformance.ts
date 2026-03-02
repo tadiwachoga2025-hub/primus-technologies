@@ -76,7 +76,7 @@ export interface UseAnimationPerformanceReturn {
   /**
    * Get texture pool (if available)
    */
-  getTexturePool: () => any;
+  getTexturePool: () => import('@/lib/animation-performance').TexturePool | null | undefined;
 
   /**
    * Manual re-initialization
@@ -216,10 +216,14 @@ export function useFPSMonitor(historySize = 60) {
   const [fps, setFps] = useState(60);
   const [averageFPS, setAverageFPS] = useState(60);
   const fpsHistory = useRef<number[]>([]);
-  const lastTime = useRef(performance.now());
+  const lastTime = useRef<number>(0);
 
   const recordFrame = useCallback(() => {
-    const now = performance.now();
+    const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
+    if (lastTime.current === 0) {
+      lastTime.current = now;
+      return;
+    }
     const deltaTime = now - lastTime.current;
     lastTime.current = now;
 

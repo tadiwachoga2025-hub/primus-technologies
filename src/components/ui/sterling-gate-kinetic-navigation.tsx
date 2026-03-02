@@ -19,7 +19,8 @@ export function SterlingGateKineticNavigation() {
 
     // Close menu on route change
     useEffect(() => {
-        setIsMenuOpen(false);
+        const timer = setTimeout(() => setIsMenuOpen(false), 0);
+        return () => clearTimeout(timer);
     }, [pathname]);
 
     // Initial Setup & Hover Effects
@@ -73,7 +74,7 @@ export function SterlingGateKineticNavigation() {
                 item.addEventListener("mouseenter", onEnter);
                 item.addEventListener("mouseleave", onLeave);
 
-                // @ts-ignore - attaching cleanup manually
+                // @ts-expect-error - attaching cleanup manually
                 item._cleanup = () => {
                     item.removeEventListener("mouseenter", onEnter);
                     item.removeEventListener("mouseleave", onLeave);
@@ -86,7 +87,7 @@ export function SterlingGateKineticNavigation() {
             ctx.revert();
             if (containerRef.current) {
                 const items = containerRef.current.querySelectorAll(".menu-list-item[data-shape]");
-                // @ts-ignore
+                // @ts-expect-error - reading custom attached cleanup function
                 items.forEach((item) => item._cleanup && item._cleanup());
             }
         };
