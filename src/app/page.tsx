@@ -35,6 +35,7 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1080"
             alt="Technology workspace"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>
@@ -66,6 +67,7 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1080"
             alt="Modern cityscape"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

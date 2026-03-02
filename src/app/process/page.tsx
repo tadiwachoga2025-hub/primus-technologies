@@ -108,6 +108,7 @@ export default function AboutPage() {
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1080"
             alt="Team collaboration"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

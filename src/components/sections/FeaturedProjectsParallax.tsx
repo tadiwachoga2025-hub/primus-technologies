@@ -78,6 +78,8 @@ export default function FeaturedProjectsParallax() {
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
                     alt="Parallax Tech Background"
                     fill
+                    priority
+                    sizes="100vw"
                     className="object-cover"
                 />
             </motion.div>

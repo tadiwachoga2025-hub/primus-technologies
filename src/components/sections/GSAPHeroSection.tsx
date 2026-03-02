@@ -57,6 +57,7 @@ export default function GSAPHeroSection() {
                     alt="Modern corporate building"
                     fill
                     priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />

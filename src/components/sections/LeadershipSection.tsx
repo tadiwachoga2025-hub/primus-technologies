@@ -3,7 +3,6 @@
 import { useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { ShieldCheck, Network, Cpu, Code2 } from 'lucide-react';
-import Image from 'next/image';
 
 const stats = [
   { icon: Code2, label: 'Tech Stack', value: 'Enterprise JS/TS' },

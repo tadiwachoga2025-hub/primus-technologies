@@ -126,6 +126,7 @@ export function CinematicVortexBackground({
           alt="Cinematic Background"
           fill
           priority
+          sizes="100vw"
           className="object-cover mix-blend-screen"
         />
 

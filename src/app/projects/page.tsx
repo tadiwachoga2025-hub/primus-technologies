@@ -61,15 +61,15 @@ export default function PortfolioPage() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className={`flex items-stretch gap-0 border-b border-[var(--border)] ${
-              i % 2 === 1 ? "flex-row-reverse" : ""
-            }`}
+            className={`flex items-stretch gap-0 border-b border-[var(--border)] ${i % 2 === 1 ? "flex-row-reverse" : ""
+              }`}
           >
             <div className="relative w-[50%] min-h-[500px]">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute top-6 left-6 px-4 py-2 bg-[var(--accent-navy)]">
