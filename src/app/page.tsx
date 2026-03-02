@@ -1,65 +1,112 @@
 import Image from "next/image";
+import Link from "next/link";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import ServicesCarousel from "@/components/sections/ServicesCarousel";
+import FeaturedProjectsParallax from "@/components/sections/FeaturedProjectsParallax";
+import LeadershipSection from "@/components/sections/LeadershipSection";
+import { CoreValuesSection } from "@/components/sections/CoreValuesSection";
+import { FlowButton } from "@/components/ui/flow-button";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="flex flex-col min-h-screen bg-[var(--background)]">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="flex w-full h-[700px] border-b border-[var(--border)]">
+        <div className="relative w-[560px] h-full">
+          <Image
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1080"
+            alt="Modern corporate building"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="flex-1 flex flex-col justify-center gap-6 p-[80px] bg-[var(--background)]">
+          <div className="flex items-center gap-3">
+            <div className="w-1 h-5 bg-[var(--accent-lime)] rounded-sm" />
+            <span className="font-mono text-[13px] font-medium tracking-[2px] text-[var(--accent-blue)]">
+              TURN-KEY OFFICE SOLUTIONS
+            </span>
+          </div>
+          <h1 className="font-display text-[72px] leading-[1.05] text-[var(--foreground)] max-w-[720px]">
+            Enterprise Digital Infrastructure for Global Markets.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="font-body text-[17px] leading-[1.5] text-[var(--foreground-muted)] max-w-[700px]">
+            To become Africa&apos;s leading enterprise digital infrastructure provider serving global markets through innovation and excellence.
+          </p>
+          <div className="flex gap-4 mt-4">
+            <FlowButton text="Explore Services" href="/sectors" />
+            <FlowButton text="Our Portfolio" href="/projects" />
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="flex items-center gap-[80px] h-[700px] p-[60px] border-b border-[var(--border)]">
+        <div className="flex flex-col gap-5 justify-center flex-1">
+          <span className="font-mono text-[13px] font-medium tracking-[2px] text-[var(--accent-navy)]">
+            OUR VALUES
+          </span>
+          <h2 className="font-display text-[48px] leading-[1.1] text-[var(--foreground)] max-w-[500px]">
+            Guided by Excellence
+          </h2>
+          <p className="font-body text-[15px] leading-[1.6] text-[var(--foreground-muted)] max-w-[500px]">
+            Integrity, Innovation, Client-Centricity, and Security Excellence are the pillars of every Primus project.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="relative flex-1 h-full">
+          <Image
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1080"
+            alt="Technology workspace"
+            fill
+            className="object-cover"
+          />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Core Values Grid - APOSSIBLE Design Pattern */}
+      <CoreValuesSection />
+
+      {/* Mission Section */}
+      <section className="flex w-full border-b border-[var(--border)]">
+        <div className="flex items-center p-[80px] bg-[var(--background)]">
+          <div className="flex flex-col gap-5 p-[60px] bg-[var(--background)] border border-[var(--border)] w-[600px]">
+            <span className="font-mono text-[13px] font-medium tracking-[2px] text-[var(--accent-blue)]">
+              OUR MISSION
+            </span>
+            <h2 className="font-display text-[36px] leading-[1.1] text-[var(--foreground)]">
+              Redefining Urban Landscapes with Innovation
+            </h2>
+            <p className="font-body text-[15px] leading-[1.6] text-[var(--foreground-muted)]">
+              To redefine urban landscapes with innovative, eco-friendly solutions. Delivering excellence in design and functionality through cutting-edge technology and sustainable practices.
+            </p>
+            <div className="w-fit mt-2">
+              <FlowButton text="Learn About Us" href="/process" />
+            </div>
+          </div>
+        </div>
+        <div className="relative flex-1 h-auto min-h-[500px]">
+          <Image
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1080"
+            alt="Modern cityscape"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Services/Expertise Section - APOSSIBLE Design Pattern */}
+      <ServicesCarousel />
+
+      {/* Featured Projects - Parallax Glassmorphism Pattern */}
+      <FeaturedProjectsParallax />
+
+      {/* Leadership Section - Enterprise Design Pattern */}
+      <LeadershipSection />
+
+      <Footer />
+    </main>
   );
 }
